@@ -6,17 +6,21 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>RFID ATTEDANCE</title>
-    <!-- <link rel="preload" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400&display=swap"
-        as="style">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400&display=swap"> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/css/bulma-carousel.min.css" />
-    <link rel="stylesheet" href="css/styles.css">
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
     <script defer src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/js/bulma-carousel.min.js"></script>
 
 </head>
+
+<style>
+    @media(max-width: 767px) {
+
+        /* <== You can change this break point as per your  needs */
+        .reverse-columns {
+            flex-direction: column-reverse;
+            display: flex;
+        }
+    }
+</style>
 
 <body>
     <nav class="navbar is-light is-fixed-top">
@@ -278,42 +282,52 @@
                 </section>
             </div>
 
-            <br>
-            <br>
-
             <div class="container">
-                <div class="columns reverse-row-order">
-                    <div class="column">
-                        <h1 class="title">ESP 32</h1>
+                <div class="columns reverse-columns">
+                    <!-- image description -->
+                    <div class="column my-auto">
+                        <h1 class="title">ESP32-DevKitC</h1>
                         <p class="has-text-black paragraph">
                             The "brain" of the system is an ESP32 arduino board, which provides the necessary processing
                             power and connectivity to manage the various components of the device. The ESP32 is a
                             powerful, yet energy-efficient microcontroller that can handle the demands of a real-time
                             attendance tracking system.
-
                         </p>
+                        <a class="button is-size-6 is-rounded " style="margin-top: 15px;"
+                            href="https://shopee.ph/30-pins-and-38-pins-ESP32-WiFi-IoT-Development-Board-i.18252381.2351717936?sp_atk=6a4becda-22bb-4b3d-83d9-462e9460b50c&xptdk=6a4becda-22bb-4b3d-83d9-462e9460b50c">
+                            <div class="icon">
+                                <i class="fas fa-shopping-bag"></i>
+                            </div>
+                            <span>Shopee Link</span>
+                        </a>
                     </div>
+                    <!-- image -->
                     <div class="column">
                         <img src="assets\img\landpage_img\ESP32.png" style="width: 70%;">
                     </div>
                 </div>
             </div>
-
-            <br>
-            <br>
-
             <div class="container">
-                <div class="columns reverse-row-order">
+                <div class="columns">
+                    <!-- image  -->
                     <div class="column">
                         <img src="assets\img\landpage_img\RFID.png" style="width: 70%;">
                     </div>
-                    <div class="column">
-                        <h1 class="title">RFID RC522</h1>
+                    <!-- image description  -->
+                    <div class="column my-auto ">
+                        <h1 class="title">RC522 RFID Reader</h1>
                         <p class="has-text-black paragraph">
                             The RFID scanner is provided by a RC522 RFID module, which is specifically designed for RFID
                             applications. The RC522 is connected to the ESP32 board, allowing it to receive information
                             from RFID cards and transfer it to the arduino board for processing.
                         </p>
+                        <a class="button is-size-6 is-rounded " style="margin-top: 15px;"
+                            href="https://shopee.ph/RC522-MFRC522-RFID-Reader-Module-13.56MHz-i.18252381.242343096?sp_atk=996bde21-8fe4-4cef-a370-92039d77e71d&xptdk=996bde21-8fe4-4cef-a370-92039d77e71d">
+                            <div class="icon">
+                                <i class="fas fa-shopping-bag"></i>
+                            </div>
+                            <span>Shopee Link</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -321,68 +335,103 @@
 
 
             <div class="container">
-                <div class="columns reverse-row-order">
-                    <div class="column">
-                        <h1 class="title">16x4 LCD</h1>
+                <div class="columns reverse-columns">
+                    <!-- image description -->
+                    <div class="column my-auto">
+                        <h1 class="title">16x4 LCD with I2c</h1>
                         <p class="has-text-black paragraph">
                             The front of the device features a 16x4 liquid crystal display that displays the current
                             time, date, and student attendance information.
                         </p>
+                        <a class="button is-size-6 is-rounded " style="margin-top: 15px;"
+                            href="https://shopee.ph/20x4-LCD-Display-I2C-White-on-Blue-i.18252381.242486108">
+                            <div class="icon">
+                                <i class="fas fa-shopping-bag"></i>
+                            </div>
+                            <span>Shopee Link</span>
+                        </a>
                     </div>
+                    <!-- image  -->
                     <div class="column">
                         <img src="assets\img\landpage_img\LCD.png" style="width: 70%;">
                     </div>
                 </div>
             </div>
 
-            <br>
-            <br>
-
             <div class="container">
-                <div class="columns reverse-row-order">
+                <div class="columns">
+                    <!-- image  -->
                     <div class="column">
                         <img src="assets\img\landpage_img\KEYPAD.png" style="width: 70%;">
                     </div>
-                    <div class="column">
-                        <h1 class="title">4x4 Keypad</h1>
+                    <!-- image description  -->
+                    <div class="column my-auto">
+                        <h1 class="title">4x4 Membrane Keypad</h1>
                         <p class="has-text-black paragraph">
                             Keypad input for manual student input. This allows teachers to manually enter the attendance
                             of students who may have forgotten their RFID cards. The keypad is designed to be
                             user-friendly and easy to navigate, ensuring that teachers can quickly and accurately record
                             attendance information.
-
                         </p>
+                        <a class="button is-size-6 is-rounded " style="margin-top: 15px;"
+                            href="https://shopee.ph/4x4-Matrix-Membrane-Keypad-i.18252381.255113942">
+                            <div class="icon">
+                                <i class="fas fa-shopping-bag"></i>
+                            </div>
+                            <span>Shopee Link</span>
+                        </a>
                     </div>
                 </div>
             </div>
 
             <div class="container">
-                <div class="columns reverse-row-order">
-                    <div class="column">
-                        <h1 class="title">OVERVIEW</h1>
+                <div class="columns reverse-columns">
+                    <!-- image description  -->
+                    <div class="column my-auto">
+                        <h1 class="title">3.7V Lithium-ion 18650 Battery</h1>
                         <p class="has-text-black paragraph">
-                            Our RFID attendance machine is designed to simplify the attendance tracking process for
-                            teachers and administrators in a classroom or school setting. With its 4x4 keypad input and
-                            16x4 LCD display, it's easy to use and enhances the user experience. By using RFID
-                            technology, it eliminates the possibility of proxy attendance and increases accuracy. The
-                            machine can store attendance data and provide real-time reporting, allowing teachers to
-                            easily monitor student attendance patterns and identify trends. With enhanced security
-                            features such as encrypted data storage and user authentication, you can be assured that the
-                            privacy of student attendance data is protected. Our RFID attendance machine can also be
-                            easily integrated with existing school management software and systems, making it a seamless
-                            addition to any classroom or school.The front of the device features a 16x4 liquid crystal
-                            display that displays the current
-                            time, date, and student attendance information.
+                            For power, the device is equipped with either a li-ion battery pack 12v or a power adapter.
+                            This provides the flexibility to use the device in different environments, whether it be in
+                            a classroom where a power source is readily available or in a remote location where a
+                            battery pack is necessary.
                         </p>
+                        <a class="button is-size-6 is-rounded " style="margin-top: 15px;"
+                            href="https://shopee.ph/PKCell-3.7V-Lithium-ion-NMC-18650-21700-Battery-for-Solar-Electric-Scooter-Mini-Fan-Power-Bank-i.18252381.1670629656">
+                            <div class="icon">
+                                <i class="fas fa-shopping-bag"></i>
+                            </div>
+                            <span>Shopee Link</span>
+                        </a>
                     </div>
+                    <!-- image  -->
                     <div class="column">
-                        <img src="assets\img\landpage_img\EXPLODED.png" style="width: 100%;">
+                        <img src="assets\img\landpage_img\BATTERY.png" style="width: 70%;">
                     </div>
                 </div>
             </div>
 
-            <br>
-            <br>
+            <div class="container">
+                <div class="columns">
+                    <!-- image  -->
+                    <div class="column">
+                        <img src="assets\img\landpage_img\EXPLODED.png" style="width: 70%;">
+                    </div>
+                    <!-- image description  -->
+                    <div class="column my-auto">
+                        <h1 class="title">Overview</h1>
+                        <p class="has-text-black paragraph">
+                            The machine can store attendance data and provide real-time reporting, allowing teachers to
+                            easily monitor student attendance patterns and identify trends. With enhanced security
+                            features such as encrypted data storage and user authentication, you can be assured that the
+                            privacy of student attendance data is protected. Our RFID attendance machine can also be
+                            easily integrated with existing school management software and systems, making it a seamless
+                            addition to any classroom or school. The front of the device features a 16x4 liquid crystal
+                            display that displays the current
+                            time, date, and student attendance information.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section class="hero" id="testing" style="margin-top: 6rem;margin-bottom: 3rem;">
@@ -414,7 +463,8 @@
                                         <article class="tile is-child notification is-info">
                                             <p class="title">10 Meters drop Test</p>
                                             <figure class="image is-4by3">
-                                                <img src="https://images.bhaskarassets.com/web2images/521/2020/10/26/iphone-12-vs-12-pro-drop-test_1603706052.gif">
+                                                <img
+                                                    src="https://images.bhaskarassets.com/web2images/521/2020/10/26/iphone-12-vs-12-pro-drop-test_1603706052.gif">
                                             </figure>
                                         </article>
                                     </div>
@@ -422,7 +472,8 @@
                                 <div class="tile is-parent">
                                     <article class="tile is-child notification is-danger">
                                         <p class="title">Battery Life</p>
-                                        <p class="subtitle">RFID Attendence is powered by li-ion battery pack that last 5 days during testing</p>
+                                        <p class="subtitle">RFID Attendence is powered by li-ion battery pack that last
+                                            5 days during testing</p>
                                         <div class="content">
                                             <!-- Content -->
                                         </div>
@@ -434,8 +485,8 @@
                                     <div class="content">
                                         <p class="title">Safety Officer</p>
                                         <figure class="image">
-                                                <img src="https://img-9gag-fun.9cache.com/photo/aRgRNVQ_460s.jpg">
-                                            </figure>
+                                            <img src="https://img-9gag-fun.9cache.com/photo/aRgRNVQ_460s.jpg">
+                                        </figure>
                                     </div>
                                 </article>
                             </div>

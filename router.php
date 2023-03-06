@@ -1,7 +1,15 @@
 <?php
 $router = new \Bramus\Router\Router();
 
-//handle api 404 errors
+
+try {
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    echo "Connection failed: " . $e->getMessage();
+}
+
+// handle api 404 errors
 $router->set404('/api(/.*)?', function () {
     header('HTTP/1.1 404 Not Found');
     header('Content-Type: application/json');
@@ -12,43 +20,72 @@ $router->set404('/api(/.*)?', function () {
 
     echo json_encode($jsonArray);
 });
+
+
+
 //handle 404 errors
 $router->set404(function () {
     header('HTTP/1.1 404 Not Found');
     include "public/404.php";
 });
 
-// $loggedIn = false;
 
-$router->before('GET|POST', '/admin/.*', function() {
+$router->before('GET|POST', '/admin/.*', function () {
     if (!$_SESSION['loggedIn'] == "true") {
         header('Location: /login');
         exit();
     }
 });
 
-$router->all(
-    '/',
-    function () {
-        include "public/landing_page.php";
-    }
-);
 
-$router->all(
-    '/login',
-    function () {
-        include "public/auth/login.php";
-    }
-);
 
-$router->get(
-    '/logout',
-    function () {
-        include "public/auth/logout.php";
-    }
-);
+$router->mount('/api', function () use ($router, $pdo) {
 
-$router->mount('/admin', function () use ($router) {
+    // Check if api_key is in data base
+    $router->before(
+        'POST',
+        '/devices/.*',
+        function () use ($pdo) {
+            $api_key = $_GET['api_key'];
+            $stmt = $pdo->prepare("SELECT * FROM devices WHERE device_api_key = :device_api_key");
+            $stmt->execute([':device_api_key' => $api_key]);
+
+            if ($stmt->rowCount() == 0) {
+                die(json_encode([
+                    'api_status' => 'api_error',
+                    'api_event' => 'invalid',
+                    'api_text' => 'invalid api key',
+                ]));
+            }
+
+        }
+    );
+
+    $router->mount(
+        '/devices',
+        function () use ($router, $pdo) {
+
+            $router->all(
+                '/send_card',
+                function () use ($pdo) {
+                        include "public\api\card_attendance.php";
+                    }
+            );
+
+            $router->all(
+                '/check_card',
+                function () use ($pdo) {
+                        include "public\api\card_attendance.php";
+                    }
+            );
+
+
+        }
+    );
+});
+
+
+$router->mount('/admin', function () use ($router, $pdo) {
 
     $router->all(
         '/',
@@ -99,5 +136,26 @@ $router->mount('/admin', function () use ($router) {
         }
     );
 });
+
+$router->all(
+    '/',
+    function () {
+        include "public/landing_page.php";
+    }
+);
+
+$router->all(
+    '/login',
+    function () {
+        include "public/auth/login.php";
+    }
+);
+
+$router->get(
+    '/logout',
+    function () {
+        include "public/auth/logout.php";
+    }
+);
 
 $router->run();
