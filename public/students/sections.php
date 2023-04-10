@@ -225,29 +225,29 @@ if (isset($_POST['device_name'])) {
             loadTable();
         });
 
-        // setInterval(function () {
-        //     loadTable();
-        // }, 5000);
+        setInterval(function () {
+            loadTable();
+        }, 5000);
 
         function loadTable() {
             $.ajax({
                 type: 'GET',
                 data: 'get-table',
                 success: function (response) {
-                    // console.log(response)
+                    console.log(response)
                     var result = JSON.parse(response);
                     var tbody = $('#device-table tbody');
                     tbody.empty();
                     for (var i = 0; i < result.length; i++) {
-                        var device = result[i];
+                        var user = result[i];
                         var tr = $('<tr>');
-                        tr.append($('<td>').text(device.device_name));
-                        tr.append($('<td>').text(device.device_room));
-                        tr.append($('<td>').text(device.device_floor + "F - " + device.device_building));
-                        tr.append($('<td>').text((device.device_mode == 0) ? "Enrollment" : "Attendance"));
-                        tr.append($('<td>').text(device.device_api_key));
-                        tr.append($('<td>').text(convertTime(device.device_created)));
-                        tr.append($('<td>').html('<button class="button is-success is-small" onclick="editDevice(' + device.id + ')"><div class="icon"><i class="fa-solid fa-pen"></i></div></button ><button class="button is-danger is-small" onclick="removeDevice(' + device.id + ')"><div class="icon"><i class="fa-solid fa-trash"></i></div></button >'));
+                        tr.append($('<td>').text(user.device_name));
+                        tr.append($('<td>').text(user.device_room));
+                        tr.append($('<td>').text(user.device_floor + "F - " + user.device_building));
+                        tr.append($('<td>').text((user.device_mode == 0) ? "Enrollment" : "Attendance"));
+                        tr.append($('<td>').text(user.device_api_key));
+                        tr.append($('<td>').text(convertTime(user.device_created)));
+                        tr.append($('<td>').html('<button class="button is-success is-small" onclick="editDevice(' + user.id + ')"><div class="icon"><i class="fa-solid fa-pen"></i></div></button ><button class="button is-danger is-small" onclick="removeDevice(' + user.id + ')"><div class="icon"><i class="fa-solid fa-trash"></i></div></button >'));
                         tbody.append(tr);
                     }
                 }
@@ -284,7 +284,7 @@ if (isset($_POST['device_name'])) {
         function saveDevice() {
             var obj = {};
             $.each($('#form').serializeArray(), function (_, val) {
-                // console.log(val.name);
+                console.log(val.name);
                 if (val.value.trim() === "" && !$('#' + val.name).hasClass('no-validation')) {
                     $('#' + val.name).addClass('is-danger');
                     return false;
@@ -297,7 +297,7 @@ if (isset($_POST['device_name'])) {
             });
 
 
-            // console.log(obj)
+            console.log(obj)
             $.ajax({
                 type: 'POST',
                 data: obj,

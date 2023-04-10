@@ -452,7 +452,24 @@
                                     <div class="tile is-parent is-vertical">
                                         <article class="tile is-child notification is-dark">
                                             <p class="title">Durability</p>
-                                            <p class="subtitle">Survived drop tests from 10 meters</p>
+                                            <table class="table is-fullwidth is-dark">
+                                                <thead>
+                                                    <tr>
+                                                        <th>No. of Test</th>
+                                                        <th>Distance</th>
+                                                        <th>Delay</th>
+                                                        <th>Accuracy</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>38</td>
+                                                        <td>23</td>
+                                                        <td>12</td>
+                                                        <td>3</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
                                         </article>
                                         <article class="tile is-child notification is-warning">
                                             <p class="title">Water Resistance</p>

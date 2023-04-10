@@ -22,6 +22,10 @@
                 Students
             </a>
 
+            <a class="navbar-item" href="/admin/attendance">
+                Attendnance
+            </a>
+
             <a class="navbar-item" href="/admin/schedules">
                 Schedules
             </a>

@@ -37,30 +37,21 @@ $router->before('GET|POST', '/admin/.*', function () {
     }
 });
 
+$router->before('GET|POST', '/api/.*', function () use ($pdo) {
+    $api_key = $_GET['api_key'];
+    $stmt = $pdo->prepare("SELECT * FROM device_data WHERE device_api_key = :device_api_key");
+    $stmt->execute([':device_api_key' => $api_key]);
+    if ($stmt->rowCount() == 0) {
+        die(json_encode([
+            'api_status' => 'api_error',
+            'api_event' => 'invalid_key',
+            'api_message' => 'invalid api key',
+        ]));
+    }
+});
 
 
 $router->mount('/api', function () use ($router, $pdo) {
-
-    // Check if api_key is in data base
-    $router->before(
-        'POST',
-        '/devices/.*',
-        function () use ($pdo) {
-            $api_key = $_GET['api_key'];
-            $stmt = $pdo->prepare("SELECT * FROM devices WHERE device_api_key = :device_api_key");
-            $stmt->execute([':device_api_key' => $api_key]);
-
-            if ($stmt->rowCount() == 0) {
-                die(json_encode([
-                    'api_status' => 'api_error',
-                    'api_event' => 'invalid',
-                    'api_text' => 'invalid api key',
-                ]));
-            }
-
-        }
-    );
-
     $router->mount(
         '/devices',
         function () use ($router, $pdo) {
@@ -79,7 +70,12 @@ $router->mount('/api', function () use ($router, $pdo) {
                     }
             );
 
-
+            $router->all(
+                '/hallpass',
+                function () use ($pdo) {
+                        include "public\api\device_hallpass.php";
+                    }
+            );
         }
     );
 });
@@ -96,42 +92,49 @@ $router->mount('/admin', function () use ($router, $pdo) {
 
     $router->all(
         '/home',
-        function () {
+        function () use ($pdo) {
             include "public/dashboard/dashboard.php";
         }
     );
 
     $router->all(
+        '/sections',
+        function () use ($pdo) {
+            include "public/students/sections.php";
+        }
+    );
+
+    $router->all(
         '/students',
-        function () {
+        function () use ($pdo) {
             include "public/students/students.php";
         }
     );
 
     $router->all(
         '/schedules',
-        function () {
+        function () use ($pdo) {
             include "public/schedules/schedules.php";
         }
     );
 
     $router->all(
         '/logs',
-        function () {
+        function () use ($pdo) {
             include "public/logs/logs.php";
         }
     );
 
     $router->all(
         '/hallpass',
-        function () {
+        function () use ($pdo) {
             include "public/hallpass/hallpass.php";
         }
     );
 
     $router->all(
         '/devices',
-        function () {
+        function () use ($pdo) {
             include "public/devices/devices.php";
         }
     );
