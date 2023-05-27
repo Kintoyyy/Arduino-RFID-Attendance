@@ -44,9 +44,9 @@
                     <a class="a-menu is-size-6 navbar-item" href="#technology">
                         Technology
                     </a>
-                    <a class="a-menu is-size-6 navbar-item" href="#testing">
+                    <!-- <a class="a-menu is-size-6 navbar-item" href="#testing">
                         Testing
-                    </a>
+                    </a> -->
                     <a class="a-menu is-size-6 navbar-item" href="#gallery">
                         Gallery
                     </a>
@@ -112,7 +112,7 @@
                         </div>
 
                         <div class="column">
-                            <img src="assets\img\landpage_img\RFID_ATTENDANCE.png">
+                            <img src="\assets\img\landpage_img\RFID_ATTENDANCE.png">
                         </div>
                     </div>
                 </div>
@@ -147,7 +147,7 @@
                                         <p class="subtitle is-6">@Kintoyyy</p>
                                     </div>
                                 </div>
-                                <div class="content">
+                                <!-- <div class="content">
                                     <p class="has-text-weight-bold">"Haha Basic"</p>
                                     <ul>
                                         <li>Stem Student</li>
@@ -163,7 +163,7 @@
                                     <i class="fa-solid fa-envelope"></i>
                                     <a href="email: kent.oyyyyyyy@gmail.com">kent.oyyyyyyy@gmail.com</a>
                                     <br>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -172,7 +172,7 @@
                         <div class="card">
                             <div class="card-image">
                                 <figure class="image is-1by1">
-                                    <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png">
+                                    <img src="assets\img\landpage_img\researchers\nash.png">
                                 </figure>
                             </div>
                             <div class="card-content">
@@ -182,7 +182,7 @@
                                         <p class="subtitle is-6">@Nash_Peñosa</p>
                                     </div>
                                 </div>
-                                <div class="content">
+                                <!-- <div class="content">
                                     <p class="has-text-weight-bold">"Haha Tite"</p>
                                     <ul>
                                         <li>Stem Student</li>
@@ -196,7 +196,7 @@
                                     <br>
                                     <br>
                                     <br>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -205,7 +205,7 @@
                         <div class="card">
                             <div class="card-image">
                                 <figure class="image is-1by1">
-                                    <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png">
+                                    <img src="assets\img\landpage_img\researchers\recede.png">
                                 </figure>
                             </div>
                             <div class="card-content">
@@ -215,7 +215,7 @@
                                         <p class="subtitle is-6">@Kent_Recede</p>
                                     </div>
                                 </div>
-                                <div class="content">
+                                <!-- <div class="content">
                                     <p class="has-text-weight-bold">"quote"</p>
                                     <ul>
                                         <li>Stem Student</li>
@@ -229,7 +229,7 @@
                                     <br>
                                     <br>
                                     <br>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -238,7 +238,7 @@
                         <div class="card">
                             <div class="card-image">
                                 <figure class="image is-1by1">
-                                    <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png">
+                                    <img src="assets\img\landpage_img\researchers\nichole.jpg">
                                 </figure>
                             </div>
                             <div class="card-content">
@@ -248,7 +248,7 @@
                                         <p class="subtitle is-6">@Chezka_Bueno</p>
                                     </div>
                                 </div>
-                                <div class="content">
+                                <!-- <div class="content">
                                     <p class="has-text-weight-bold">"quote"</p>
                                     <ul>
                                         <li>Stem Student</li>
@@ -262,7 +262,7 @@
                                     <br>
                                     <br>
                                     <br>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -433,7 +433,7 @@
                 </div>
             </div>
         </section>
-
+        <!-- 
         <section class="hero" id="testing" style="margin-top: 6rem;margin-bottom: 3rem;">
             <div class="hero-body is-paddingless">
                 <div class="container" style="overflow:hidden;">
@@ -492,7 +492,7 @@
                                         <p class="subtitle">RFID Attendence is powered by li-ion battery pack that last
                                             5 days during testing</p>
                                         <div class="content">
-                                            <!-- Content -->
+                                          
                                         </div>
                                     </article>
                                 </div>
@@ -511,7 +511,7 @@
                     </section>
                 </div>
             </div>
-        </section>
+        </section> -->
 
 
         <section class="hero" id="gallery" style="margin-top: 6rem;margin-bottom: 3rem;">
@@ -530,85 +530,80 @@
                             <div class="card">
                                 <div class="card-image">
                                     <figure class="image is-16by9 is-covered">
-                                        <img src="https://i.cbc.ca/1.5359228.1577206958!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_620/smudge-the-viral-cat.jpg"
-                                            alt="" />
+                                        <img src="assets\img\landpage_img\20230312_223608.jpg" alt="" />
                                     </figure>
                                 </div>
                                 <div class="card-content">
                                     <div class="item__title">
                                         Development
                                     </div>
-                                    <div class="item__description">
+                                    <!-- <div class="item__description">
                                         Ici une petite description pour tester le slider
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
 
                             <div class="card">
                                 <div class="card-image">
                                     <figure class="image is-16by9 is-covered">
-                                        <img src="https://i.pinimg.com/originals/ba/92/7f/ba927ff34cd961ce2c184d47e8ead9f6.jpg"
-                                            alt="" />
+                                        <img src="assets\img\landpage_img\20230312_230958.jpg" alt="" />
                                     </figure>
                                 </div>
                                 <div class="card-content">
                                     <div class="item__title">
-                                        Coding
+                                        Prototyping
                                     </div>
-                                    <div class="item__description">
+                                    <!-- <div class="item__description">
                                         Ici une petite description pour tester le slider
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
 
                             <div class="card">
                                 <div class="card-image">
                                     <figure class="image is-16by9 is-covered">
-                                        <img src="https://i.pinimg.com/originals/59/54/b4/5954b408c66525ad932faa693a647e3f.jpg"
-                                            alt="" />
+                                        <img src="assets\img\landpage_img\20230312_231004.jpg" alt="" />
                                     </figure>
                                 </div>
                                 <div class="card-content">
                                     <div class="item__title">
-                                        Modules
+                                        PHP server testing
                                     </div>
-                                    <div class="item__description">
+                                    <!-- <div class="item__description">
                                         Ici une petite description pour tester le slider
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
 
                             <div class="card">
                                 <div class="card-image">
                                     <figure class="image is-16by9 is-covered">
-                                        <img src="data:image/jpeg;base64,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"
-                                            alt="" />
+                                        <img src="assets\img\landpage_img\20230329_015722.jpg" alt="" />
                                     </figure>
                                 </div>
                                 <div class="card-content">
                                     <div class="item__title">
-                                        Testing
+                                        Building
                                     </div>
-                                    <div class="item__description">
+                                    <!-- <div class="item__description">
                                         Ici une petite description pour tester le slider
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
 
                             <div class="card">
                                 <div class="card-image">
                                     <figure class="image is-16by9 is-covered">
-                                        <img src="https://static.printler.com/cache/0/8/1/1/8/c/08118cb095d702b52289a030f9ba1188e345c33b.jpg"
-                                            alt="" />
+                                        <img src="assets\img\landpage_img\20230319_185534.jpg" alt="" />
                                     </figure>
                                 </div>
                                 <div class="card-content">
                                     <div class="item__title">
-                                        Final
+                                        Final Assembly
                                     </div>
-                                    <div class="item__description">
+                                    <!-- <div class="item__description">
                                         Ici une petite description pour tester le slider
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>

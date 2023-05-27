@@ -1,35 +1,12 @@
 {
 	"folders": [
 		{
-			"path": "arduino code/RFID Group 6"
-		},
-		{
-			"path": "../../../Users/kento/Documents/Arduino"
-		},
-		{
 			"path": "."
 		},
 		{
-			"path": "../AZK-Mikrotik-Manager"
-		},
-		{
-			"path": "../AZK-Manager"
-		},
-		{
-			"path": "../AZK-Mikrotik-Manager-1"
+			"name": "RFID Group 6",
+			"path": "arduino code/RFID Group 6"
 		}
 	],
-	"settings": {
-		"files.associations": {
-			"*.embeddedhtml": "html",
-			"cstddef": "cpp",
-			"*.tcc": "cpp",
-			"deque": "cpp",
-			"string": "cpp",
-			"unordered_map": "cpp",
-			"unordered_set": "cpp",
-			"vector": "cpp",
-			"system_error": "cpp"
-		}
-	}
+	"settings": {}
 }

@@ -1,7 +1,5 @@
 <?php
 $router = new \Bramus\Router\Router();
-
-
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -60,6 +58,12 @@ $router->mount('/api', function () use ($router, $pdo) {
                 '/send_card',
                 function () use ($pdo) {
                         include "public\api\card_attendance.php";
+                        // if ($register['device_mode'] == 0) {
+            
+                        // } else {
+            
+                        // }
+            
                     }
             );
 

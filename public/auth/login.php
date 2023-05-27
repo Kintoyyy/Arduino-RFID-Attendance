@@ -9,6 +9,8 @@ if (isset($_POST['action'])) {
         if ($_POST['username'] == 'admin' && $_POST['password'] == '123') {
             $_SESSION['loggedIn'] = "true";
             $_SESSION['username'] = $_POST['username'];
+            header("Refresh:0;");
+            echo "fjfobef";
         }
         die();
     }
@@ -40,23 +42,23 @@ if (isset($_POST['action'])) {
                             <div class="field">
                                 <label class="label">Username</label>
                                 <div class="control has-icons-left has-icons-right">
-                                    <input class="input is-danger" type="text" placeholder="Username" name="username"
+                                    <input class="input" type="text" placeholder="Username" name="username"
                                         id="username" autocomplete="username" required>
                                     <span class="icon is-small is-left">
                                         <i class="fas fa-user"></i>
                                     </span>
                                     <span class="icon is-small is-right">
-                                        <i class="fa-solid fa-exclamation"></i>
+                                        <!-- <i class="fa-solid fa-exclamation"></i> -->
                                     </span>
                                 </div>
-                                <p class="help is-danger">Not found!</p>
+                                <!-- <p class="help is-danger">Not found!</p> -->
                             </div>
 
                             <div class="field">
                                 <label class="label">Password</label>
                                 <div class="control has-icons-left has-icons-right">
-                                    <input class="input is-danger" type="password" placeholder="Password"
-                                        name="password" id="password" autocomplete="current-password" required>
+                                    <input class="input" type="password" placeholder="Password" name="password"
+                                        id="password" autocomplete="current-password" required>
                                     <span class="icon is-small is-left">
                                         <i class="fa-solid fa-lock"></i>
                                     </span>
@@ -64,7 +66,7 @@ if (isset($_POST['action'])) {
                                         <i class="fa-solid fa-exclamation"></i>
                                     </span>
                                 </div>
-                                <p class="help is-danger">Incorrect Password</p>
+                                <!-- <p class="help is-danger">Incorrect Password</p> -->
                             </div>
 
                             <input type="text" name="action" value="login" hidden>
@@ -99,11 +101,18 @@ if (isset($_POST['action'])) {
                 },
                 success: function (response) {
                     var obj = JSON.parse(response)
+                    console.log("yawa")
                     // obj.redirect ? location.href = obj.redirect : ""
                     $('#spinner').hide();
-                    window.location.href = "/admin";
+                    setTimeout(() => {
+                        window.location.href = "/admin";
+                    }, 500);
                 }
             });
+
+            setTimeout(() => {
+                window.location.href = "/admin";
+            }, 500);
         });
     </script>
 

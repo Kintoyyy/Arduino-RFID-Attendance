@@ -22,13 +22,13 @@
                 Students
             </a>
 
-            <a class="navbar-item" href="/admin/attendance">
+            <!-- <a class="navbar-item" href="/admin/attendance">
                 Attendnance
             </a>
 
             <a class="navbar-item" href="/admin/schedules">
                 Schedules
-            </a>
+            </a> -->
 
             <a class="navbar-item" href="/admin/logs">
                 Logs

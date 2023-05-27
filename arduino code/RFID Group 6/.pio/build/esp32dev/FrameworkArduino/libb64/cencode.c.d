@@ -1,3 +1,3 @@
 .pio/build/esp32dev/FrameworkArduino/libb64/cencode.c.o: \
- C:/Users/kento/.platformio/packages/framework-arduinoespressif32/cores/esp32/libb64/cencode.c \
- C:/Users/kento/.platformio/packages/framework-arduinoespressif32/cores/esp32/libb64/cencode.h
+ C:/Users/Kintoyyy/.platformio/packages/framework-arduinoespressif32/cores/esp32/libb64/cencode.c \
+ C:/Users/Kintoyyy/.platformio/packages/framework-arduinoespressif32/cores/esp32/libb64/cencode.h

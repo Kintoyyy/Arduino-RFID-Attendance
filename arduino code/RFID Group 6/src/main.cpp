@@ -13,12 +13,12 @@
 #include <NTPClient.h>
 
 // RFID SERVER CONFIG --------
-const char *SERVER_URL = "http://10.15.0.171/Group-6-Research-RFID/api/devices";
+const char *SERVER_URL = "http://192.168.137.1/api/devices";
 const char *API_KEY = "28-4628-9e55-c11e";
 
 // WIFI SETINGS --------------
-const char *WIFI_SSID = "RATO_WIFI";
-const char *WIFI_PASS = "@KentRato092303wifi";
+const char *WIFI_SSID = "KINTOYYY";
+const char *WIFI_PASS = "@KentRato123";
 
 // MODULES SETUP ----------------------
 // -> LCD i2c <-
@@ -28,6 +28,7 @@ LiquidCrystal_I2C lcd(0x27, LCD_COLS, LCD_ROWS);
 // -> RFID READER <-
 const int RFID_RST_PIN = 15;
 const int RFID_SS_PIN = 5;
+
 MFRC522 mfrc522(RFID_SS_PIN, RFID_RST_PIN);
 
 // -> KEYPAD <-
@@ -381,13 +382,6 @@ void SEND_CARD(String DATA, int TYPE)
 
             String api_event = jsonDoc["api_event"];
 
-            // Door Access -------------------------------
-            boolean door_access = jsonDoc["door_access"];
-            if (door_access)
-            {
-                SERVO_OPEN();
-            }
-
             if (api_event == "invalid_card")
             {
                 lcd.setCursor(2, 0);
@@ -467,6 +461,12 @@ void SEND_CARD(String DATA, int TYPE)
 
                 lcd.setCursor((20 - api_message.length()) / 2, 2);
                 lcd.print(api_message);
+            }
+            // Door Access -------------------------------
+            boolean door_access = jsonDoc["door_access"];
+            if (door_access)
+            {
+                SERVO_OPEN();
             }
         }
         else
@@ -549,8 +549,8 @@ void GET_DATA(char hallpass)
     KEYPAD_VALUE = "";
 
     // TEsting purpose
-    HP_DEST = "HALLPASS " + (String)hallpass;
-    HP_LIMIT = "10min";
+    // HP_DEST = "HALLPASS " + (String)hallpass;
+    // HP_LIMIT = "10min";
     HP_ID = hallpass;
     CURRENT_DISPLAY = 2;
 
